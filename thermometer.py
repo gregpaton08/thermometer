@@ -14,5 +14,15 @@ def read_sensor():
     return lines
 
 
+def read_temp():
+    data = read_sensor()
+    while 'YES' not in data[0]:
+        time.sleep(0.2)
+        data = read_sensor()
+    temperature = data[1][data[1].find('=') + 1:]
+    temperature = float(temperature) / 1000.0
+    return temperature
+
+
 if __name__ == '__main__':
-    print(read_sensor())
+    print(read_temp())
