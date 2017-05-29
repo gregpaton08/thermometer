@@ -24,5 +24,11 @@ def read_temp():
     return temperature
 
 
+def convert_celsius_to_fahrenheit(celsius):
+    return celsius * 9.0 / 5.0 + 32.0
+
+
 if __name__ == '__main__':
-    print(read_temp())
+    temperature = read_temp()
+    print(temperature)
+    print(convert_celsius_to_fahrenheit(temperature))
